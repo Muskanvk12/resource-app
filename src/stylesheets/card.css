@@ -1,0 +1,63 @@
+.Card {
+  height: 192px;
+  width: 360px;
+  padding: 22px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #D7DFE9;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cardTitle {
+  height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* background-color: lightblue; */
+}
+
+.cardIcon {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: 2px solid #D7DFE9
+}
+
+.cartTitleIcon {
+    height: 20.38881492614746px;
+    width: 24px;
+    left: 10px;
+    top: 12px;
+    border-radius: 0px;
+  }
+
+.cardName {
+  height: 100%;
+  padding: 1px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardNameHeading {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cardNameSubheading {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.cardLink{
+    padding: 20px 0px;
+}
+
+.cardLink, .cardDesc{
+    font-size: 14px;
+}

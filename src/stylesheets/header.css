@@ -1,10 +1,18 @@
+.Home{
+    position: relative;
+}
+
 .Header{
     height: 72px;
     width: 100%;
+    padding: 0px 45px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: brown;
+    border-bottom: 1px solid #D7DFE9;
+    background-color: #FFFFFF;
+    position: sticky;
+    top: 0;
 }
 
 .accountImageWrapper{
