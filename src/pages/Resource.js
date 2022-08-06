@@ -2,8 +2,8 @@ import {useState} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
 import SortRoundedIcon from '@mui/icons-material/SortRounded';
-import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
 import "../stylesheets/resource.css"
+import BackBtn from '../components/BackBtn';
 
 export default function Resource() {
 
@@ -11,10 +11,12 @@ export default function Resource() {
 
     let navigate = useNavigate()
 
-    function navigateBack() {
-        navigate('/')
-    }
+    // to navigate to previous page
+    // function navigateBack() {
+    //     navigate('/')
+    // }
 
+    // to show or hide sort menu
     const [sortMenuClass, setsortMenuClass] = useState("sortMenuHidden");
 
     function showSortMenu(){
@@ -26,12 +28,14 @@ export default function Resource() {
         }
     }
 
+    // to navigate to items page
+    function toAddItemPage(){
+        navigate('/additem')
+    }
+
     return (
         <div className='Resource'>
-            <div className="resourceBack">
-                <span onClick={navigateBack}><KeyboardArrowLeftRoundedIcon /></span>
-                <p onClick={navigateBack}>Resource</p>
-            </div>
+            <BackBtn page = {"Resource"}/>
             <div className="resourceTop">
                 <div className="resourceTitle">
                     <div className="resourceTitleLeft">
@@ -42,7 +46,7 @@ export default function Resource() {
                     <div className="resourceTitleRight">
                         <div className="resourceName">{location.state.title}</div>
                         <div className="resourceCategory">{location.state.category}</div>
-                        <div className="resourceLink"><a href={`${location.state.link}`}>{location.state.link}</a></div>
+                        <div className="resourceLink"><a href={location.state.link} target="_blank" rel="noreferrer noopener">{location.state.link}</a></div>
                     </div>
                 </div>
                 <div className="resourceDescWrapper">
@@ -76,7 +80,7 @@ export default function Resource() {
             <div className="resourceTable"></div>
             <div className="resourceBottom">
                 <div className="resourceBottomLeft">
-                    <div className="bottomBtns addItemBtn">ADD ITEM</div>
+                    <div className="bottomBtns addItemBtn" onClick={toAddItemPage}>ADD ITEM</div>
                     <div className="bottomBtns deleteBtn">DELETE</div>
                 </div>
                 <div className="resourceBottomRight">1 2 3 4 5 6 7 8 9 10</div>

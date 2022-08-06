@@ -1,0 +1,120 @@
+
+.AddItems {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F5F5;
+}
+
+.addItemMain {
+  height: calc(100vh - 72px);
+  width: 100%;
+  padding-left: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AddFrom {
+  height: 100%;
+  width: 50%;
+}
+
+.addFormBackBtn{
+    height: 40px;
+    width: 100%;
+}
+
+.addFormFormWrapper{
+    height: calc(100vh - 112px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addFormForm{
+    height: 70%;
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.formHeading{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form label{
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #7E858E;
+}
+
+.addItemInput{
+    height: 80px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.formInput{
+    height: 40px;
+    width: 320px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    border: 1px solid #D7DFE9;
+    outline: none;
+}
+
+#desciption{
+    height: 80px;
+    width: 320px;
+    resize: none;
+    border: 1px solid #D7DFE9;
+    outline: none;
+}
+
+.createBtnWrapper{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+}
+
+.createBtn{
+    height: 40px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0B69FF;
+    color: #FFFFFF;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.SideImage {
+  height: 100%;
+  width: 50%;
+  display: flex;
+}
+
+.Image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

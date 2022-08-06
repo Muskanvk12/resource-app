@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import AddItems from './pages/AddItems';
 import Home from './pages/Home';
 import Resource from './pages/Resource';
 
@@ -25,6 +26,7 @@ function App() {
         <Routes>
         <Route path='/' element={<Home data = {data}/>}/>
         <Route path='/resource' element={<Resource/>}/>
+        <Route path='/additem' element={<AddItems/>}/>
         </Routes>
       </BrowserRouter>
     </div>
