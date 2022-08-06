@@ -1,0 +1,222 @@
+.Resource {
+  padding: 20px 90px;
+  background-color: #f5f5f5;
+}
+
+.resourceBack {
+  height: 40px;
+  width: 95%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.resourceBack span {
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.resourceBack p {
+    cursor: pointer;
+  }
+
+.resourceTop {
+  width: 95%;
+}
+
+.resourceTitle {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  color: #171f46;
+}
+
+.resourceTitleLeft {
+  height: 100%;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.resourceIconWrapper {
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #d7dfe9;
+  border-radius: 100px;
+}
+
+.resourceIcon {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.resourceTitleRight {
+  height: 100%;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.resourceName {
+  font-size: 32px;
+}
+
+.resourceCategory {
+  font-size: 16px;
+}
+
+.resourceLink {
+  font-size: 14px;
+}
+
+.resourceDescWrapper {
+  margin: 10px 0px;
+}
+
+.resourceDesc {
+  font-size: 14px;
+}
+
+.resourceUpdate {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.updateBtn {
+  height: 40px;
+  width: 93px;
+  padding: 8px, 20px, 8px, 20px;
+  background-color: #0b69ff;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.resourceSearch {
+  height: 40px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #171f46;
+  position: relative;
+}
+
+.resourseItems {
+  height: 100%;
+  width: 34%;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.resourceSearchSort {
+  height: 100%;
+  width: 66%;
+  display: flex;
+  align-items: center;
+}
+
+.resourceSearchBar {
+  height: 100%;
+  width: 90%;
+  margin: 0px;
+}
+
+.resourceSort {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.sortIcon {
+  margin-right: 10px;
+}
+
+.sortMenu {
+  height: 134px;
+  width: 136px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #7E858E;
+  position: absolute;
+  top: 3.12rem;
+  right: 0px;
+}
+
+.sortMenu ul{
+    height: 130px;
+    width: 131px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+
+.sortMenuItems{
+    height: 40px;
+    width: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sortMenuHidden{
+    display: none;
+}
+
+.resourceBottom {
+  width: 95%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resourceBottomLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomBtns {
+  height: 40px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.addItemBtn {
+  margin-right: 10px;
+  background-color: #2dca73;
+}
+
+.deleteBtn {
+  margin-left: 10px;
+  background-color: #d7dfe9;
+}

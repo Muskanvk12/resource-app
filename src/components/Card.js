@@ -1,8 +1,17 @@
+import { useNavigate } from "react-router-dom" 
 import "../stylesheets/card.css"
 
 export default function Card({ele}) {
+
+    const navigate = useNavigate()
+
+
+    function openThisCard(){
+        navigate('/resource', {state:{...ele}})
+    }
+
   return (
-    <div className="Card">
+    <div className="Card" onClick={()=>{openThisCard()}}>
         <div className="cardTitle">
             <div className="cardIcon"><img className="cartTitleIcon" src={`${ele.icon_url}`} alt="" /></div>
             <div className="cardName">

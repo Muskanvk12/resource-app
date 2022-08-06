@@ -67,8 +67,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
   font-size: 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #D7DFE9;
+  border-radius: 3px;
 }
 
 .searchBarIcon {

@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
+import Resource from './pages/Resource';
 
 function App() {
   let url = "https://media-content.ccbp.in/website/react-assignment/resources.json"
@@ -19,7 +21,12 @@ function App() {
 
   return (
     <div className="App">
-      <Home data = {data}/>
+      <BrowserRouter>
+        <Routes>
+        <Route path='/' element={<Home data = {data}/>}/>
+        <Route path='/resource' element={<Resource/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
