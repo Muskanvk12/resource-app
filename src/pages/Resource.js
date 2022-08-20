@@ -1,7 +1,8 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
 import SortRoundedIcon from '@mui/icons-material/SortRounded';
+import ReactTable from '../components/ReactTable';
 import "../stylesheets/resource.css"
 import BackBtn from '../components/BackBtn';
 
@@ -19,23 +20,23 @@ export default function Resource() {
     // to show or hide sort menu
     const [sortMenuClass, setsortMenuClass] = useState("sortMenuHidden");
 
-    function showSortMenu(){
-        if(sortMenuClass === "sortMenuHidden"){
+    function showSortMenu() {
+        if (sortMenuClass === "sortMenuHidden") {
             setsortMenuClass("sortMenu")
         }
-        else{
+        else {
             setsortMenuClass("sortMenuHidden")
         }
     }
 
     // to navigate to items page
-    function toAddItemPage(){
+    function toAddItemPage() {
         navigate('/additem')
     }
 
     return (
         <div className='Resource'>
-            <BackBtn page = {"Resource"}/>
+            <BackBtn page={"Resource"} />
             <div className="resourceTop">
                 <div className="resourceTitle">
                     <div className="resourceTitleLeft">
@@ -77,7 +78,9 @@ export default function Resource() {
                     </ul>
                 </div>
             </div>
-            <div className="resourceTable"></div>
+            <div className="resourceTable">
+                <ReactTable/>
+            </div>
             <div className="resourceBottom">
                 <div className="resourceBottomLeft">
                     <div className="bottomBtns addItemBtn" onClick={toAddItemPage}>ADD ITEM</div>
