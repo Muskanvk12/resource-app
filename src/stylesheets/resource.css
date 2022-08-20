@@ -1,5 +1,8 @@
 .Resource {
   padding: 20px 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #F5F5F5;
 }
 
@@ -71,10 +74,12 @@
 }
 
 .resourceCategory {
+  color: #7E858E;
   font-size: 16px;
 }
 
 .resourceLink {
+  color: #0B69FF;
   font-size: 14px;
 }
 
@@ -190,11 +195,19 @@
 }
 
 .resourceTable{
-  margin-top: 20px;
-  border: 1px solid #D7DFE9;
-  border-radius: 10px;
+  width: 95%;
+  margin: 20px 0px;
   font-size: 14px;
   color: #7E858E;
+}
+
+.ReactTable, .tableWrapper{
+  width: 100%;
+}
+
+.tableWrapper{
+  border: 1px solid #D7DFE9;
+  border-radius: 10px;
 }
 
 .resourceBottom {
