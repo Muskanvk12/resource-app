@@ -10,8 +10,6 @@ export default function Resource() {
 
     const location = useLocation()
 
-    let navigate = useNavigate()
-
     // to navigate to previous page
     // function navigateBack() {
     //     navigate('/')
@@ -27,11 +25,6 @@ export default function Resource() {
         else {
             setsortMenuClass("sortMenuHidden")
         }
-    }
-
-    // to navigate to items page
-    function toAddItemPage() {
-        navigate('/additem')
     }
 
     return (
@@ -81,13 +74,7 @@ export default function Resource() {
             <div className="resourceTable">
                 <ReactTable/>
             </div>
-            <div className="resourceBottom">
-                <div className="resourceBottomLeft">
-                    <div className="bottomBtns addItemBtn" onClick={toAddItemPage}>ADD ITEM</div>
-                    <div className="bottomBtns deleteBtn">DELETE</div>
-                </div>
-                <div className="resourceBottomRight">1 2 3 4 5 6 7 8 9 10</div>
-            </div>
+            
         </div>
     )
 }

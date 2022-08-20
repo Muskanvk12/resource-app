@@ -1,6 +1,8 @@
-import {useTable} from 'react-table'
+import { useTable, useSortBy, usePagination } from 'react-table'
+import { useNavigate } from 'react-router-dom'
 import { useState, useEffect, useMemo } from 'react'
-import { Center, Spinner, Table,Thead, Tbody, Th, Tr, Td , Checkbox} from '@chakra-ui/react'
+import { Center, Spinner, Table, Thead, Tbody, Th, Tr, Td, Checkbox, Button, Icon } from '@chakra-ui/react'
+import{ChevronLeftIcon, ChevronRightIcon} from '@chakra-ui/icons'
 
 import axios from 'axios'
 
@@ -10,8 +12,8 @@ let url = "https://media-content.ccbp.in/website/react-assignment/resources.json
 const tableColumn = [
   {
     header: "",
-    accessor : "id",
-    Cell:({row})=><Checkbox value={row.values.id}></Checkbox>
+    accessor: "id",
+    Cell: ({ row }) => <Checkbox value={row.values.id}></Checkbox>
   },
   {
     header: "TITLE",
@@ -29,31 +31,39 @@ const tableColumn = [
 
 export default function ReactTable() {
 
+  let navigate = useNavigate()
+
+  function toAddItemPage() {
+    navigate('/additem')
+  }
+
   const [items, setitems] = useState([]);
 
-  const columns = useMemo(()=>tableColumn,[])
-  const datas = useMemo(()=>items,[items])
+  const columns = useMemo(() => tableColumn, [])
+  const datas = useMemo(() => items, [items])
 
   const {
-    getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-     useTable({
-    columns: columns,
-    data: datas,
-  })
+    getTableProps, getTableBodyProps, headerGroups, page, nextPage, previousPage, canNextPage, canPreviousPage, pageOptions, state, prepareRow } =
+    useTable({
+      columns: columns,
+      data: datas,
+    }, useSortBy, usePagination)
 
-  useEffect(()=>{
-    const callApi = async()=>{
-      try{
+    const { pageIndex } = state
+
+  useEffect(() => {
+    const callApi = async () => {
+      try {
         const datas = await axios.get(url)
         setitems(datas.data)
       }
-      catch(err){
+      catch (err) {
         console.log(err)
       }
     }
     callApi()
-  },[])
-  
+  }, [])
+
 
 
   if (items.length === 0) {
@@ -62,14 +72,14 @@ export default function ReactTable() {
 
   return (
     <div className='ReactTable'>
-      <Table  variant='simple' borderColor={"#D7DFE9"} backgroundColor={"white"} borderRadius={"10px"} {...getTableProps}>
+      <Table variant='simple' borderColor={"#D7DFE9"} backgroundColor={"white"} borderRadius={"10px"} {...getTableProps}>
         <Thead>
           {
-            headerGroups.map((headerGroup)=>{
-              return(<Tr {...headerGroup.getHeaderGroupProps()}>
+            headerGroups.map((headerGroup) => {
+              return (<Tr {...headerGroup.getHeaderGroupProps()}>
                 {
-                  headerGroup.headers.map((column)=>{
-                    return(<Th {...column.getHeaderGroupProps}>
+                  headerGroup.headers.map((column) => {
+                    return (<Th {...column.getHeaderGroupProps}>
                       {column.render("header")}
                     </Th>)
                   })
@@ -80,12 +90,12 @@ export default function ReactTable() {
         </Thead>
         <Tbody {...getTableBodyProps}>
           {
-            rows.map((row, i)=>{
+            page.map((row, i) => {
               prepareRow(row)
-              return(
-                <Tr borderTop={"2px solid #D7DFE9"} {...rows.getRowsProps}>
-                  {row.cells.map((cell)=>{
-                    return(<Td {...cell.getCellProps}>
+              return (
+                <Tr borderTop={"2px solid #D7DFE9"} {...row.getRowsProps}>
+                  {row.cells.map((cell) => {
+                    return (<Td {...cell.getCellProps}>
                       {cell.render("Cell")}
                     </Td>)
                   })}
@@ -95,6 +105,13 @@ export default function ReactTable() {
           }
         </Tbody>
       </Table>
+      <div className="resourceBottom">
+        <div className="resourceBottomLeft">
+          <div className="bottomBtns addItemBtn" onClick={toAddItemPage}>ADD ITEM</div>
+          <div className="bottomBtns deleteBtn">DELETE</div>
+        </div>
+        <div className="resourceBottomRight"><Button height="1.5rem" width="1.5rem" size="xs" backgroundColor={"#FFFFFF"} border={"1px solid #D7DDE9"} borderRadius={"2px"} onClick={()=>{previousPage()}} disabled={!canPreviousPage}><Icon as={ChevronLeftIcon} w={18} h={18} color="#171F46" /></Button> 2 3 4 5 6 7 8 9 <Button height="1.5rem" width="1.5rem" size="xs" backgroundColor={"#FFFFFF"} border={"1px solid #D7DDE9"} borderRadius={"2px"} onClick={()=>{nextPage()}} disabled={!canNextPage}><Icon as={ChevronRightIcon} w={18} h={18} color="#171F46" /></Button></div>
+      </div>
     </div>
   )
 }
